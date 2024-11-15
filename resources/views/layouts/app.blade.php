@@ -13,24 +13,64 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <!-- Styles -->
+        <script>
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        </script>
+        @livewireStyles
     </head>
     <body class="font-sans antialiased">
+
+        <x-banner />
+        <button onclick="toggleDarkMode()" class="p-2 rounded">
+            Toggle Dark Mode
+        </button>
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.navigation')
+            @livewire('navigation-menu')
 
             <!-- Page Heading -->
-            @isset($header)
+            @if (isset($header))
                 <header class="bg-white dark:bg-gray-800 shadow">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
+                       
                     </div>
                 </header>
-            @endisset
+            @endif
 
             <!-- Page Content -->
             <main>
                 {{ $slot }}
             </main>
         </div>
+
+        @stack('modals')
+
+        @livewireScripts
+        <script>
+            function toggleDarkMode() {
+                const html = document.documentElement;
+                if (html.classList.contains('dark')) {
+                    html.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    html.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+            }
+        
+            // Load theme from local storage on page load
+            document.addEventListener('DOMContentLoaded', () => {
+                if (localStorage.getItem('theme') === 'dark') {
+                    document.documentElement.classList.add('dark');
+                }
+            });
+        </script>
+        
     </body>
 </html>

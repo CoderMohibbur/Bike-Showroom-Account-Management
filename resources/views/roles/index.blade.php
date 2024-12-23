@@ -19,10 +19,13 @@
                                 {{ $role->name }}
                             </span>
                             <div class="flex space-x-2">
+                                <a href="{{ route('roles.show', $role->id) }}" class="text-green-500 hover:underline">
+                                    View
+                                </a>
                                 <a href="{{ route('roles.edit', $role->id) }}" class="text-blue-500 hover:underline">
                                     Edit
                                 </a>
-                                <form action="{{ route('roles.destroy', $role->id) }}" method="POST" class="inline">
+                                <form action="{{ route('roles.destroy', $role->id) }}" method="POST" class="inline" onsubmit="return confirm('Are you sure?')">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="text-red-500 hover:underline">

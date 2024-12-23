@@ -14,17 +14,6 @@ Route::get('/', function () {
 
 
 Route::get('/assign-role-permission', [UserController::class, 'assignRoleAndPermission']);
-Route::resource('posts', PostController::class);
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
 
 Route::middleware(['auth', 'role:Admin'])->group(function () {
     Route::resource('roles', RoleController::class);
@@ -39,3 +28,15 @@ Route::middleware(['auth', 'role:Admin'])->group(function () {
     Route::get('/role-permissions', [RolePermissionController::class, 'index'])->name('role-permissions.index');
     Route::post('/role-permissions/{role}/assign-permissions', [RolePermissionController::class, 'assignPermissions'])->name('role-permissions.assignPermissions');
 });
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
+Route::resource('posts', PostController::class);
+

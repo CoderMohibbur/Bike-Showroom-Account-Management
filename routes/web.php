@@ -49,27 +49,11 @@ Route::resource('posts', PostController::class);
 Route::resource('users', UserController::class);
 
 // Ledger
-Route::get('/ledger', [LedgerController::class, 'index'])->name('ledger.index');
-Route::get('/ledger/create', [LedgerController::class, 'create'])->name(name: 'ledger.create');
-Route::post('/ledger', [LedgerController::class, 'store'])->name('ledger.store');
-Route::get('ledger/{id}', [LedgerController::class, 'show']);
-Route::get('/ledger/{id}/edit', [LedgerController::class, 'edit'])->name('ledger.edit');
-Route::put('ledger/{id}', [LedgerController::class, 'update']);
-Route::delete('/ledger/{id}', [LedgerController::class, 'destroy'])->name('ledger.destroy');
+Route::resource('ledger', LedgerController::class);
 
 
 
-//BankLedgerController
-
-Route::prefix('bank-ledger')->name('bank_ledger.')->group(function () {
-    Route::get('/', [BankLedgerController::class, 'index'])->name('index');
-    Route::get('/create', [BankLedgerController::class, 'create'])->name('create');
-    Route::post('/', [BankLedgerController::class, 'store'])->name('store');
-    Route::get('/{id}/edit', [BankLedgerController::class, 'edit'])->name('edit');
-    Route::put('/{id}', [BankLedgerController::class, 'update'])->name('update');
-    Route::delete('/{id}', [BankLedgerController::class, 'destroy'])->name('destroy');
-});
-
+Route::resource('bank-ledger', BankLedgerController::class);
 
 
 Route::resource('expenses', ExpenseController::class);

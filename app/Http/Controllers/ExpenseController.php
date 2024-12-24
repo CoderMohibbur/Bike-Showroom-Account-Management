@@ -57,4 +57,10 @@ class ExpenseController extends Controller
 
         return redirect()->route('expenses.index')->with('success', 'Expense deleted successfully!');
     }
+    public function show($id)
+{
+    $expense = Expense::findOrFail($id); // Fetch the expense by ID
+    return view('expenses.show', compact('expense')); // Return a view for the single expense
+}
+
 }

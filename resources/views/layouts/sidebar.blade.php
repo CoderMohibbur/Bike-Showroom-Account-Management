@@ -141,7 +141,7 @@
             </li>
           </ul> --}}
                     <div class="pt-2 space-y-2">
-                        <a href="ledger" target="_blank"
+                        <a href="ledger"
                             class="flex items-center p-2 text-base text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
                             <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
@@ -155,7 +155,7 @@
                             </svg>
                             <span class="ml-3" sidebar-toggle-item="">Ledger</span>
                         </a>
-                        <a href="bank-ledger" target="_blank"
+                        <a href="bank-ledger"
                             class="flex items-center p-2 text-base text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
                             <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
@@ -166,7 +166,7 @@
                             </svg>
                             <span class="ml-3" sidebar-toggle-item="">Bank Ledger</span>
                         </a>
-                        <a href="expenses" target="_blank"
+                        <a href="expenses"
                             class="flex items-center p-2 text-base text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
                             <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
@@ -177,7 +177,7 @@
                             </svg>
                             <span class="ml-3" sidebar-toggle-item="">All Expensive</span>
                         </a>
-                        <a href="bike_ledger" target="_blank"
+                        <a href="http://127.0.0.1:8000/bike_ledger"
                             class="flex items-center p-2 text-base text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
                             <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"/>

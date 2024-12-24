@@ -4,7 +4,7 @@
         <a href="{{ route('expenses.create') }}" class="bg-blue-600 px-4 py-2 text-white rounded hover:bg-blue-700">Add Expense</a>
 
         <div class="overflow-x-auto mt-6">
-            <table class="table-auto w-full border-collapse border border-gray-700">
+            <table id="expensesTable" class="table-auto w-full border-collapse border border-gray-700">
                 <thead>
                     <tr class="bg-gray-800">
                         <th class="border border-gray-700 px-6 py-4 text-left">Date</th>
@@ -39,4 +39,7 @@
             </table>
         </div>
     </div>
+
+
+
 </x-app-layout>

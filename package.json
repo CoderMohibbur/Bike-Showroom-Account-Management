@@ -18,6 +18,12 @@
     },
     "dependencies": {
         "alpinejs": "^3.14.3",
-        "flowbite": "^2.5.2"
+        "datatables.net": "^2.1.8",
+        "datatables.net-buttons": "^3.2.0",
+        "datatables.net-buttons-dt": "^3.2.0",
+        "datatables.net-dt": "^2.1.8",
+        "flowbite": "^2.5.2",
+        "jszip": "^3.10.1",
+        "pdfmake": "^0.3.0-beta.14"
     }
 }

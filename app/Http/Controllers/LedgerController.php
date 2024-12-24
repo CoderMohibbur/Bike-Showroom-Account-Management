@@ -15,14 +15,14 @@ class LedgerController extends Controller
     // Show all bank ledger entries
     public function index()
     {
-        $bank_ledgers = BankLedger::all();
-        return view('bank_ledger.index', compact('bank_ledgers'));
+        $ledgers = BankLedger::all();
+        return view('ledgers.index', compact('ledgers'));
     }
 
     // Show the form to create a new bank ledger entry
     public function create()
     {
-        return view('bank_ledger.create');
+        return view('ledgers.create');
     }
 
     // Store a new bank ledger entry
@@ -39,14 +39,14 @@ class LedgerController extends Controller
 
         BankLedger::create($request->all());
 
-        return redirect()->route('bank_ledger.index');
+        return redirect()->route('ledgers.index');
     }
 
     // Show the form to edit an existing bank ledger entry
     public function edit($id)
     {
-        $bank_ledger = BankLedger::findOrFail($id);
-        return view('bank_ledger.edit', compact('bank_ledger'));
+        $ledgers = BankLedger::findOrFail($id);
+        return view('ledgers.edit', compact('ledgers'));
     }
 
     // Update an existing bank ledger entry
@@ -59,19 +59,19 @@ class LedgerController extends Controller
             'description' => 'nullable|string',
         ]);
 
-        $bank_ledger = BankLedger::findOrFail($id);
-        $bank_ledger->update($request->all());
+        $ledgers = BankLedger::findOrFail($id);
+        $ledgers->update($request->all());
 
-        return redirect()->route('bank_ledger.index');
+        return redirect()->route('ledgers.index');
     }
 
     // Delete a bank ledger entry
     public function destroy($id)
     {
-        $bank_ledger = BankLedger::findOrFail($id);
-        $bank_ledger->delete();
+        $ledgers = BankLedger::findOrFail($id);
+        $ledgers->delete();
 
-        return redirect()->route('bank_ledger.index');
+        return redirect()->route('ledgers.index');
     }
 }
 
